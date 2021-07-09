@@ -1,0 +1,9 @@
+{
+    "name": "Diego/fast-parking",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}

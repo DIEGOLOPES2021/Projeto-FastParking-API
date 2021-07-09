@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastParking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleGlobal.css">
+    <link rel="stylesheet" href="css/hader.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/inputs.css">
+
+
+</head>
+
+<body>
+ 
+    <header id="header">
+        <h1>Sistema <span id="Fast">Fast</span><span id="Parking">Parking</span></h1>
+        <img src="logoFastParking.png" alt="FastParking" title="FastParking">
+    </header>
+    <main>
+        <div class="container-receipt">
+            <form class="form" id="form-register">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" class="input-form" id="nome" placeholder="Nome" data-idcar="new" required />
+                </div>
+                <div>
+                    <label for="placa">Placa</label>
+                    <input type="text" class="input-form" id="placa" placeholder="Placa" pattern="^[A-Z]{3}-\d{4}" maxlength="8" required />
+                </div>
+            </form>
+            <footer class="modal-footer">
+                <button type="submit" class="button green" id="salvar">Salvar</button>
+                <button type="button" class="button yellow" id="precos">Preços</button>
+            </footer>
+
+        </div>
+        <table id="tableCars">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>data</th>
+                    <th>Hora</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <!-- MODAL DE PREÇOS -->
+        <div class="modal" id="modal-Prices">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h1>Preços</h1>
+                    <span class="close-button" id="close-prices">&#10006;</span>
+                </header>
+
+                <form class="form" id="form-price">
+                    <div>
+                        <label for="primeira-hora">Primeira hora</label>
+                        <input type="text" class="input-form" id="primeira-hora" placeholder="Primeira hora" required />
+                    </div>
+                    <div>
+                        <label for="demais-horas">Demais horas</label>
+                        <input type="text" class="input-form" id="demais-horas" placeholder="Demais horas" required />
+                    </div>
+                </form>
+
+                <footer class="modal-footer">
+                    <button type="submit" class="button green" id="salvarPreco">Salvar</button>
+                    <button type="button" class="button red" id="cancelar-prices">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    
+        <!-- MODAL DE COMPROVANTE -->
+        <div class="modal" id="modal-receipt">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h1>Comprovante</h1>
+                    <span class="close-button" id="close-receipt">&#10006;</span>
+                </header>
+                <form class="form" id="form-receipt">
+                    <div>
+                        <label>Nome:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                    <div>
+                        <label>Placa:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                    <div>
+                        <label>Data:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                    <div>
+                        <label>Hora:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                </form>
+                <footer class="modal-footer">
+                    <button type="submit" class="button blue" id="imprimir-receipt">Imprimir</button>
+                    <button type="button" class="button red" id="cancelar-receipt">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+        <!-- MODAL COMPROVANTE DE SAÍDA -->
+        <div class="modal" id="modal-exit">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h1>Comprovante de Saída</h1>
+                    <span class="close-button" id="close-exit">&#10006;</span>
+                </header>
+                <form class="form" id="form-exit">
+                    <div>
+                        <label>Nome:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                    <div>
+                        <label>Placa:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                    <div>
+                        <label>entrada:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                    <div>
+                        <label>saída:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                    <div>
+                        <label>Valor a pagar:</label>
+                        <input class="input-readonly" readonly />
+                    </div>
+                </form>
+                <footer class="modal-footer">
+                    <button type="submit" class="button blue" id="imprimir-exit">Imprimir</button>
+                    <button type="button" class="button red" id="cancelar-exit">Cancelar</button>
+                </footer>
+
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
